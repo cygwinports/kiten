@@ -1,0 +1,4 @@
+category: KDE Text
+requires: libgcc1 libkdecore5 libQtCore4 libQtDBus4 libQtGui4 libstdc++6
+sdesc: "KDE Japanese reference tool"
+ldesc: "KDE education suite"
