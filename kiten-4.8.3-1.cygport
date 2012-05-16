@@ -1,0 +1,9 @@
+inherit kde4
+
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -fr ${D}/usr/share/fonts/kanjistrokeorders/
+}
