@@ -1,0 +1,16 @@
+inherit kde4
+
+NAME="kiten"
+VERSION=4.10.5
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="KDE Japanese reference tool"
+DESCRIPTION="Part of the KDE education suite"
+REQUIRES="font-kanjistrokeorders-ttf"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -fr ${D}/usr/share/fonts/kanjistrokeorders/
+}
