@@ -6,7 +6,8 @@ RELEASE=1
 CATEGORY="Text"
 SUMMARY="KDE Japanese reference tool"
 DESCRIPTION="Part of the KDE education suite"
-REQUIRES="font-kanjistrokeorders-ttf"
+
+REQUIRES="font-kanjistrokeorders-ttf kde-runtime"
 
 src_install() {
 	cd ${B}
