@@ -1,13 +1,13 @@
-inherit kde4
+inherit kf5
 
 NAME="kiten"
-VERSION=14.12.3
+VERSION=15.04.3
 RELEASE=1
 CATEGORY="Text"
 SUMMARY="KDE Japanese reference tool"
 DESCRIPTION="Part of the KDE education suite"
 
-REQUIRES="font-kanjistrokeorders-ttf kde-runtime"
+REQUIRES="kanjistrokeorders-fonts"
 
 src_install() {
 	cd ${B}
