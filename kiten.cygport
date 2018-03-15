@@ -1,17 +1,40 @@
 inherit kf5
 
 NAME="kiten"
-VERSION=17.08.3
+VERSION=17.12.3
 RELEASE=1
 CATEGORY="Text"
 SUMMARY="KDE Japanese reference tool"
 DESCRIPTION="Part of the KDE education suite"
 
-REQUIRES="kanjistrokeorders-fonts"
+PKG_NAMES="${NAME}" # libkiten5 libkiten-devel
+kiten_REQUIRES="kanjistrokeorders-fonts"
+kiten_CONTENTS="
+	etc/postinstall/kiten.sh
+	usr/bin/cygkiten-5.dll
+	usr/bin/kiten*
+	usr/share/applications/org.kde.kiten*.desktop
+	usr/share/config.kcfg/kiten.kcfg
+	usr/share/doc/HTML/*/kiten/
+	usr/share/doc/${NAME}
+	usr/share/icons/hicolor/*/apps/kiten.*
+	usr/share/kiten/
+	usr/share/kxmlgui5/kiten*/
+	usr/share/locale/*/LC_MESSAGES/kiten.mo
+	usr/share/metainfo/org.kde.kiten.appdata.xml
+"
+libkiten5_CONTENTS="
+	usr/bin/cygkiten-5.dll
+"
+libkiten_devel_CONTENTS="
+	usr/include/libkiten/
+	usr/lib/libkiten.dll.a
+"
+PKG_IGNORE=${libkiten_devel_CONTENTS}
 
 src_install() {
 	cd ${B}
-	cyginstall
+	kf5_install
 
 	rm -fr ${D}/usr/share/fonts/kanjistrokeorders/
 }
